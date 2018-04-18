@@ -12,7 +12,7 @@ PROJECT_DEPS := Gemfile Gemfile.lock package.json yarn.lock
 
 .PHONY: all clean install update
 
-all : serve
+all: serve _site _site/index.html
 
 check:
 	$(JEKYLL) doctor
