@@ -1,6 +1,6 @@
 title: My Link Tree
 description: My Custom Link Tree. My Custom Instgram Bio.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/linktree" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 image: "/images/23823754_167317707338431_9091876837084102656_n.jpg"
 instagram_username: coachhaydenking
