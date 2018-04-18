@@ -2,6 +2,7 @@ SHELL := /bin/bash
 BUNDLE := bundle
 YARN := yarn
 JEKYLL := $(BUNDLE) exec jekyll
+HTMLPROOFER := $(BUNDLE) exec htmlproofer
 CSS_DIR := css/
 JS_DIR := js/
 VENDOR_DIR := vendor/
@@ -42,3 +43,6 @@ build: clean install
 
 serve: install
 	$(JEKYLL) serve
+
+test: build
+	$(HTMLPROOFER) --http-status-ignore "302,403" ./_site
