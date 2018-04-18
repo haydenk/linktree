@@ -21,10 +21,10 @@ check:
 		_site
 
 clean:
-	rm -rf .sass-cache/ _site/ node_modules/ .bundle/ gems/ ${JS_DIR}/vendor/
+	rm -rf .sass-cache/ _site/ node_modules/ .bundle/ _vendor/bundle/
 
 install: $(PROJECT_DEPS)
-	$(BUNDLE) install --path /vendor/bundle
+	$(BUNDLE) install --path _vendor/bundle
 	$(YARN) install
 
 update: $(PROJECT_DEPS)
