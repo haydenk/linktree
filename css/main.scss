@@ -1,0 +1,71 @@
+---
+---
+
+@import "bootstrap/scss/functions";
+@import "variables";
+@import "bootstrap/scss/bootstrap";
+
+html {
+  body {
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -.01em;
+    position: relative;
+    padding: 0 0 60px;
+    margin: 0;
+    max-width: 100%;
+    background-color: $body-bg;
+    min-height: 100vh;
+  }
+}
+
+header {
+  margin-top: 20px;
+  padding-top: 15px;
+  .small {
+    a {
+      color: #777;
+      text-decoration: none;
+    }
+  }
+}
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin-bottom: 1.1rem;
+    @media screen and (max-width: 640px) {
+      a {
+        font-size: 0.7rem;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      a {
+        font-size: 0.75rem;
+      }
+    }
+
+  }
+}
+
+.social-media-list {
+  font-size: 3rem;
+  margin-top: 2rem;
+  a {
+    &.facebook {
+      color: #3b5998;
+    }
+    &.twitter {
+      color: #30d8f0;
+    }
+    &.instagram {
+      color: #984289;
+    }
+    &.github {
+      color: #000;
+    }
+  }
+}

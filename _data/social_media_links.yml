@@ -1,0 +1,23 @@
+- name: Facebook
+  css: facebook
+  icon: fab fa-facebook
+  username: thehaydenking
+  url: //www.facebook.com/
+
+- name: Twitter
+  css: twitter
+  icon: fab fa-twitter
+  username: coachhaydenking
+  url: //twitter.com/
+
+- name: Instagram
+  css: instagram
+  icon: fab fa-instagram
+  username: coachhaydenking
+  url: //www.instagram.com/
+
+- name: Github
+  css: github
+  icon: fab fa-github
+  username: haydenk
+  url: //github.com/

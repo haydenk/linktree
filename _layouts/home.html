@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<ul class="links">
+    {% for link in site.data.links %}
+    <li><a class="btn btn-block btn-lg btn-primary" href="{{ link.url }}" title="{{ link.title }}" target="_blank">{{ link.text }}</a></li>
+    {% endfor %}
+</ul>
+
+<div class="row social-media-list">
+    {% for social in site.data.social_media_links %}
+    <div class="col-3"><a class="{{ social.css }}"
+                          target="_blank"
+                          title="{{ social.name }} | @{{ social.username }}"
+                          href="{{ social.url }}{{ social.username }}"><i class="{{ social.icon }}"></i></a></div>
+    {% endfor %}
+</div>
