@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+- 2.5.0
+
+script: make test
+
+branches:
+  only:
+  - master
+
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
+exclude: [_vendor]
+
+sudo: false

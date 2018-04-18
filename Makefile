@@ -6,6 +6,7 @@ HTMLPROOFER := $(BUNDLE) exec htmlproofer
 CSS_DIR := css/
 JS_DIR := js/
 VENDOR_DIR := vendor/
+DEPLOY_REPO="https://${DEPLOY_BLOG_TOKEN}@github.com/haydenk/linktree.git"
 
 PROJECT_DEPS := Gemfile Gemfile.lock package.json yarn.lock
 
@@ -46,3 +47,6 @@ serve: install
 
 test: build
 	$(HTMLPROOFER) --http-status-ignore "302,403" ./_site
+
+deploy:
+	echo ${DEPLOY_REPO}
