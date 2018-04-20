@@ -6,7 +6,6 @@ HTMLPROOFER := $(BUNDLE) exec htmlproofer
 CSS_DIR := css/
 JS_DIR := js/
 VENDOR_DIR := vendor/
-DEPLOY_REPO="https://${DEPLOY_TOKEN}@github.com/haydenk/linktree.git"
 
 PROJECT_DEPS := Gemfile Gemfile.lock package.json yarn.lock
 
@@ -39,8 +38,8 @@ include-yarn-deps:
 	cp node_modules/popper.js/dist/umd/popper.min.* $(VENDOR_DIR)
 	cp node_modules/bootstrap/dist/js/bootstrap.min.* $(VENDOR_DIR)
 
-build: clean install
-	$(JEKYLL) build
+build: install
+	$(JEKYLL) build --config `ls -dm _config*yml|tr -d ' '`
 
 serve: install
 	$(JEKYLL) serve
