@@ -6,7 +6,6 @@ HTMLPROOFER := $(BUNDLE) exec htmlproofer
 CSS_DIR := css/
 JS_DIR := js/
 VENDOR_DIR := vendor/
-VERSION = $(shell git describe --tags --dirty --always)
 
 PROJECT_DEPS := Gemfile Gemfile.lock package.json yarn.lock
 
