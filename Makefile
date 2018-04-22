@@ -38,6 +38,11 @@ include-yarn-deps:
 	cp node_modules/popper.js/dist/umd/popper.min.* $(VENDOR_DIR)
 	cp node_modules/bootstrap/dist/js/bootstrap.min.* $(VENDOR_DIR)
 
+check-for-version-env:
+ifndef VERSION
+	$(error VERSION is undefined)
+endif
+
 build: install
 	$(JEKYLL) build --config `ls -dm _config*yml|tr -d ' '`
 
@@ -47,5 +52,5 @@ serve: install
 test: build
 	$(HTMLPROOFER) --http-status-ignore "302,403" ./_site
 
-deploy:
+deploy: check-for-version-env
 	tar -C _site -cjf linktree-${VERSION}.tar.bz2 .
