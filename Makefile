@@ -49,10 +49,4 @@ test: build
 	$(HTMLPROOFER) --http-status-ignore "302,403" ./_site
 
 deploy:
-	git config --local user.name "Travis CI"
-	git config --local user.email "hayden.king@gmail.com"
-	git tag ${VERSION}
 	tar -C _site -cjf linktree-${VERSION}.tar.bz2 .
-
-tarball:
-	echo linktree-${VERSION}.tar.bz2
