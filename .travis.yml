@@ -10,7 +10,7 @@ branches:
 
 env:
   global:
-  - VERSION=`cat version`
+  - VERSION=`git describe --tags --dirty --always`
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 exclude: [vendor]
