@@ -10,6 +10,7 @@ branches:
 
 env:
   global:
+  - VERSION=`cat version`
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 exclude: [_vendor]
