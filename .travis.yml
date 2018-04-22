@@ -13,7 +13,7 @@ env:
   - VERSION=`cat version`
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
-exclude: [_vendor]
+exclude: [vendor]
 
 before_deploy:
   - git config --local user.name "Travis CI"
@@ -24,7 +24,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: hC00MmDk+8ugSPj27WcHR31IBYa5hLDsJBzk0Mby53LtYXAYlobQW5Z+BSbPzdRqwbRWMDdr2MvQLopkbL0wovwNj52nvuQHzZYajdE3Itexei6QVrbeX2Zg/SrBGF82EmcfuA5s5QdOYKao/mObNVSLhZ2Px7+A+WEVCrIzzTTj6CyxdZoJjpHczldmofZ6yHxXg6yefJLiIta71sx0IpTqRPussGBOMCPVc6jv+G5mcHpwz3tuJ+IRFTBJUNFRXK//l2/WS9fp3XtnLVLy8l6VPpAML6Tsoct34CCWi0fq7Z7bZAKlTk0Fuc8GU3/IAp6XllKDAYfU1IbVv/dGrCTTy7lKx1ZnjZuMbLr0uvQylKjVG0p6PEyyNFab2YkWCg1WeqoLDLRi2Mgp6KzCTPb1euJVNNADsCyheIdrr8lv6Fd8Hne37bU4AN29VVQB46WUMW9Gd+cigo8KTRx8K3QLBfRyy6RSXtLO/jq/EVaElJAxZT35FiZDfc3KRFPmDIC2DdwEnxB1rQbyh262g9Vn1kdNVGYVYJfzw7Rn7wIbV0X6q0SKqL4vctDrjC3S+mBW2dCqLTSxI3F6Hgo6hthfF+rKxQ+NcyWrPLohJJ7oykwGtLIAArBmdTKPcSvoy7kRDw6fKLhc9rvhcEO8UQjv8Vl01sMhYTuSAzBSix4=
+    secure: lYoJQM9DSFbhcIpD74doZrROnvkBLuuATJnmblJYxyYP8uKgondA5Hir1paA/yo32nvVhtcWEoj/UA2e8igrI53DZ7FAmkhj/k8zrraZPUuuswBVUlpYlHYgpH8IP5qHewAKQFj6b0OQQsw6T7HTPLOXi1E1MLCEmf246A//w2621MGUcBufcIbpdAKUlbh3e47BeEAmU7yMDusPZtVtoz42ctLPoFcCtkkL635qBgsOF1RF0qobuK4i6lEIxwbwBibeB0qTgTi//+eMuC6CMCXzW9Ryxvu4wNVK1Y/ZjZmqbr8PQ1Y8VohBIcUU1hM4NuFeI2emqrzUBNqvwV/k6dgXQCi8+89VGVSGlGXGzc/3o50tcOHwb5HKK0UKDG/IyWkFNtN6vWAEXtgJ0wFLjpC6GPzHNCFErD8MzaI0IVHh9ByIHVQVAnbu7sZ4hs9mo0JZxZkMWf7w95DYGTdNMeidecU9PPFQ1FykOHO87BLwWrj/9XOOLWo6CdKMadJeMEvctV5o6QcNlNlDx+cPvRkbrxQ+Aa/FyKhmVvd3o65RHqP86FZJ3MqjH4jeiRT+CuLl5DVez1KaV3bg8boJ3E6UIiJUuKvCU1EgpVksht9Sl4cz9PgqqCfKBREeCUM7V/kNYti8uFbn/wC7+DpLiqnwH5QCT4RMtrXLDn+PvBY=
   file: linktree-$VERSION.tar.bz2
   skip_cleanup: true
   on:
