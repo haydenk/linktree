@@ -14,4 +14,16 @@ env:
 
 exclude: [_vendor]
 
+before_deploy:
+  - make deploy
+
+deploy:
+  provider: releases
+  api_key:
+    secure: hC00MmDk+8ugSPj27WcHR31IBYa5hLDsJBzk0Mby53LtYXAYlobQW5Z+BSbPzdRqwbRWMDdr2MvQLopkbL0wovwNj52nvuQHzZYajdE3Itexei6QVrbeX2Zg/SrBGF82EmcfuA5s5QdOYKao/mObNVSLhZ2Px7+A+WEVCrIzzTTj6CyxdZoJjpHczldmofZ6yHxXg6yefJLiIta71sx0IpTqRPussGBOMCPVc6jv+G5mcHpwz3tuJ+IRFTBJUNFRXK//l2/WS9fp3XtnLVLy8l6VPpAML6Tsoct34CCWi0fq7Z7bZAKlTk0Fuc8GU3/IAp6XllKDAYfU1IbVv/dGrCTTy7lKx1ZnjZuMbLr0uvQylKjVG0p6PEyyNFab2YkWCg1WeqoLDLRi2Mgp6KzCTPb1euJVNNADsCyheIdrr8lv6Fd8Hne37bU4AN29VVQB46WUMW9Gd+cigo8KTRx8K3QLBfRyy6RSXtLO/jq/EVaElJAxZT35FiZDfc3KRFPmDIC2DdwEnxB1rQbyh262g9Vn1kdNVGYVYJfzw7Rn7wIbV0X6q0SKqL4vctDrjC3S+mBW2dCqLTSxI3F6Hgo6hthfF+rKxQ+NcyWrPLohJJ7oykwGtLIAArBmdTKPcSvoy7kRDw6fKLhc9rvhcEO8UQjv8Vl01sMhYTuSAzBSix4=
+  file: linktree-$VERSION.tar.bz2
+  skip_cleanup: true
+  on:
+    repo: haydenk/linktree
+
 sudo: false
