@@ -54,5 +54,5 @@ test: build
 	$(HTMLPROOFER) --http-status-ignore "302,403" ./_site
 
 deploy: check-for-version-env
-	echo $GIT_VERSION
+	echo $(GIT_VERSION)
 	tar -C _site -cjf linktree-${VERSION}.tar.bz2 .
