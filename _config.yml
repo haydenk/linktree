@@ -18,5 +18,5 @@ exclude:
   - yarn.lock
   - node_modules
   - Makefile
-  - _vendor
+  - vendor
   - .idea

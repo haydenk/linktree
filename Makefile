@@ -3,9 +3,9 @@ BUNDLE := bundle
 YARN := yarn
 JEKYLL := $(BUNDLE) exec jekyll
 HTMLPROOFER := $(BUNDLE) exec htmlproofer
-CSS_DIR := css/
-JS_DIR := js/
-VENDOR_DIR := vendor/
+CSS_DIR := css
+JS_DIR := js
+VENDOR_DIR := vendor
 GIT_VERSION = $(shell git describe --tags --dirty --always)
 
 PROJECT_DEPS := Gemfile Gemfile.lock package.json yarn.lock
@@ -23,10 +23,10 @@ check:
 		_site
 
 clean:
-	rm -rf .sass-cache/ _site/ node_modules/ .bundle/ _vendor/bundle/
+	rm -rf .sass-cache/ _site/ node_modules/ .bundle/ vendor/bundle/ $(JS_DIR)/$(VENDOR_DIR)/
 
 install: $(PROJECT_DEPS)
-	$(BUNDLE) install --path _vendor/bundle
+	$(BUNDLE) install --path vendor/bundle
 	$(YARN) install
 
 update: $(PROJECT_DEPS)
@@ -35,9 +35,9 @@ update: $(PROJECT_DEPS)
 
 include-yarn-deps:
 	mkdir -p $(VENDOR_DIR)
-	cp node_modules/jquery/dist/jquery.min.* $(VENDOR_DIR)
-	cp node_modules/popper.js/dist/umd/popper.min.* $(VENDOR_DIR)
-	cp node_modules/bootstrap/dist/js/bootstrap.min.* $(VENDOR_DIR)
+	cp node_modules/jquery/dist/jquery.min.* $(JS_DIR)/$(VENDOR_DIR)
+	cp node_modules/popper.js/dist/umd/popper.min.* $(JS_DIR)/$(VENDOR_DIR)/
+	cp node_modules/bootstrap/dist/js/bootstrap.min.* $(JS_DIR)/$(VENDOR_DIR)/
 
 check-for-version-env:
 ifndef VERSION
