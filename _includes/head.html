@@ -5,7 +5,7 @@
   <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="{{ "/css/main.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/css/main.css" | cachebuster | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <script defer src="//use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
   <meta property="og:locale" content="en_US" />
@@ -13,10 +13,10 @@
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}" />
   <meta property="og:description" content="{{ site.description }}" />
   <meta property="og:url" content="{{ site.url }}" />
-  <meta property="og:image" content="{{ site.url }}{{ site.image }}" />
+  <meta property="og:image" content="{{ site.url }}{{ site.image | cachebuster }}" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:description" content="{{ site.description }}" />
   <meta name="twitter:title" content="summary" />
   <meta name="twitter:domain" content="haydenkLinktree" />
-  <meta name="twitter:image" content="{{ site.url }}{{ site.image }}" />
+  <meta name="twitter:image" content="{{ site.url }}{{ site.image | cachebuster }}" />
 </head>
