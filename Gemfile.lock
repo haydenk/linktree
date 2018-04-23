@@ -111,7 +111,6 @@ DEPENDENCIES
   jekyll (~> 3.7.3)
   jekyll-gzip (~> 1.1)
   multi_js (~> 0.1.0)
-  tzinfo-data
 
 RUBY VERSION
    ruby 2.5.0p0
