@@ -5,7 +5,7 @@
                  width="90"
                  height="90"
                  alt="Picture of Me"
-                 src="{{ site.image | cachebuster }}" />
+                 src="{{ site.image }}?{{ site.time | date: '%s' }}" />
             <p class="small"><a href="javascript:;">@{{ site.instagram_username }}</a></p>
         </div>
     </div>
