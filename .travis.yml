@@ -8,11 +8,6 @@ branches:
   only:
   - master
 
-env:
-  global:
-  - VERSION=`git describe --tags --dirty --always`
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-
 exclude: [vendor]
 
 before_deploy:
