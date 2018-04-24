@@ -13,10 +13,10 @@
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}" />
   <meta property="og:description" content="{{ site.description }}" />
   <meta property="og:url" content="{{ site.url }}" />
-  <meta property="og:image" content="{{ site.url }}{{ site.image }}?{{ site.time | date: '%s' }}" />
+  <meta property="og:image" content="{{ site.image | absolute_url }}?{{ site.time | date: '%s' }}" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:description" content="{{ site.description }}" />
   <meta name="twitter:title" content="summary" />
   <meta name="twitter:domain" content="haydenkLinktree" />
-  <meta name="twitter:image" content="{{ site.url }}{{ site.image }}?{{ site.time | date: '%s' }}" />
+  <meta name="twitter:image" content="{{ site.image | absolute_url }}?{{ site.time | date: '%s' }}" />
 </head>

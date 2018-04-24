@@ -40,7 +40,7 @@ include-yarn-deps:
 	cp node_modules/bootstrap/dist/js/bootstrap.min.* $(JS_DIR)/$(VENDOR_DIR)/
 
 build: install
-	$(JEKYLL) build --config `ls -dm _config*yml|tr -d ' '`
+	$(JEKYLL) build --config _config.yml,_config_prod.yml
 
 serve: install
 	$(JEKYLL) serve
