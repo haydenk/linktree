@@ -10,7 +10,7 @@ layout: default
 
 <div class="row social-media-list">
     {% for social in site.data.social_media_links %}
-    <div class="col-3"><a class="{{ social.css }}"
+    <div class="col-6"><a class="{{ social.css }}"
                           target="_blank"
                           title="{{ social.name }} | @{{ social.username }}"
                           href="{{ social.url }}{{ social.username }}"><i class="{{ social.icon }}"></i></a></div>
