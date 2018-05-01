@@ -14,19 +14,13 @@ env:
 
 exclude: [vendor]
 
-before_deploy:
-  - git config --local user.name "Travis CI"
-  - git config --local user.email "hayden.king@gmail.com"
-  - git tag ${VERSION}
-  - make deploy
-
 deploy:
-  provider: releases
-  api_key:
-    secure: SUbT5oTyE1G/xOHYxRtTtl+5KjHVsJpgKpNj0vnnOkZ43CkU6kfKlZHvJnIw7U55rk1W3xwX+bbSjn2kmm7y6j0et2hexh5/aSUbT1QN9bdfJps6m+aQGVUswBkUZXcJ9nbF3FmOTHy9kd6sAavo9JbGQzRojpruZraXXTwJYpYkze6LwFbv46DX/O0AWAx0qNT1LRjLAkQnwb9VKnXIHYuaqr8rb9keZTYACnZ8Rkpd/tFl+BKGgJKL/aS1obAhCiMqLPmIbnrduLUP8/D7ktj8nv244KPPnR7E3xecoKHeDqXIgQgAjuldl5uD/CHEM+DbEHGcQO0W8mQWCHIjuUorEjmD4k+E+K5xBST4dVSXUoO5lf/B2YeGyuxN1Ly+AdiPsWUvPlxFfdyp+sarliR0f5/8TwJ7vWkGgjTe+Y7Yz9z+o4Gdpvbxfx7qadyLi6ftWVW+rRRYHqsOQn087yEC1DJFg5NAsT5kZCFNBK+Fi0y1e38xyA7ugtezBuByKzUqOVuodU+ZqnEtau11CeEl2gVVIOq+RY0LpXz5MioyWhHmMR7dAl4453q2bDY37Cp20hGDpmbDRwQnpT11mIX1zfXGNGYjJPicXwPqoWZwy+Vw0EyhwN/B/fzq9B87gK+2crL/+qOwx5Kb5KDQeom8wLfgsyY4UYNworBVoiI=
-  file: linktree-$VERSION.tar.bz2
+  provider: pages
   skip_cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  local-dir: _site
   on:
-    repo: haydenk/linktree
+    branch: master
 
 sudo: false

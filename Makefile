@@ -46,7 +46,4 @@ serve: install
 	$(JEKYLL) serve
 
 test: build
-	$(HTMLPROOFER) --http-status-ignore "302,403,404" ./_site
-
-deploy:
-	tar -C _site -cjf linktree-${VERSION}.tar.bz2 .
+	$(HTMLPROOFER) --disable-external ./_site
