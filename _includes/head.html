@@ -2,12 +2,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" href="/images/favicon.ico?{{ site.time | date: '%s' }}">
+  <link rel="apple-touch-icon" href="/images/favicon-256.png?{{ site.time | date: '%s' }}">
+  <link rel="apple-touch-icon" sizes="256x256" href="/images/favicon-256.png?{{ site.time | date: '%s' }}">
+  <link rel="apple-touch-icon" sizes="1024x1024" href="/images/favicon-1024.png?{{ site.time | date: '%s' }}">
+  <link rel="apple-touch-icon-precomposed" href="/images/favicon-1024.png?{{ site.time | date: '%s' }}">
   <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="{{ "/css/main.css" | relative_url }}?{{ site.time | date: '%s' }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <script defer src="//use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+  <meta name="apple-mobile-web-app-title" content="{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}">
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}" />
