@@ -21,7 +21,7 @@ check:
 		_site
 
 clean:
-	rm -rf .sass-cache/ _site/ node_modules/ .bundle/ vendor/bundle/ $(JS_DIR)/vendor/
+	rm -rf .sass-cache/ _site/ node_modules/ .bundle/ vendor/bundle/ $(JS_DIR)/vendor/ fonts/
 
 install: $(PROJECT_DEPS)
 	$(BUNDLE) install --path vendor/bundle
@@ -32,15 +32,13 @@ update: $(PROJECT_DEPS)
 	$(YARN) upgrade
 
 include-yarn-deps:
-	mkdir -p $(VENDOR_DIR)
-	cp node_modules/jquery/dist/jquery.min.* $(JS_DIR)/vendor/
-	cp node_modules/popper.js/dist/umd/popper.min.* $(JS_DIR)/vendor/
-	cp node_modules/bootstrap/dist/js/bootstrap.min.* $(JS_DIR)/vendor/
+	mkdir -p $(PWD)/fonts
+	cp -vR node_modules/npm-font-open-sans/fonts/* $(PWD)/fonts/
 
-build: install
+build: clean install include-yarn-deps
 	$(JEKYLL) build --config _config.yml,_config_prod.yml
 
-serve: install
+serve: install include-yarn-deps
 	$(JEKYLL) serve
 
 test: build

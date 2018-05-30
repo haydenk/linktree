@@ -122,5 +122,6 @@ build-iPhoneSimulator/
 *.css.map
 
 *.tar.bz2
+fonts/*
 
 # End of https://www.gitignore.io/api/ruby,sass,node,jekyll
