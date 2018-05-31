@@ -3,7 +3,12 @@
 
 @import "bootstrap";
 $FontPathOpenSans: "../fonts";
+$fa-font-path: "../fonts/fa";
 @import "npm-font-open-sans/open-sans";
+@import "@fortawesome/fontawesome-free-webfonts/scss/fontawesome";
+@import "@fortawesome/fontawesome-free-webfonts/scss/fa-brands";
+@import "@fortawesome/fontawesome-free-webfonts/scss/fa-regular";
+@import "@fortawesome/fontawesome-free-webfonts/scss/fa-solid";
 
 html {
   body {

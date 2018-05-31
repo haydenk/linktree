@@ -23,22 +23,23 @@ check:
 clean:
 	rm -rf .sass-cache/ _site/ node_modules/ .bundle/ vendor/bundle/ $(JS_DIR)/vendor/ fonts/
 
-install: $(PROJECT_DEPS)
+install: $(PROJECT_DEPS) include-yarn-deps
 	$(BUNDLE) install --path vendor/bundle
 	$(YARN) install
 
-update: $(PROJECT_DEPS)
+update: $(PROJECT_DEPS) include-yarn-deps
 	$(BUNDLE) update
 	$(YARN) upgrade
 
 include-yarn-deps:
-	mkdir -p $(PWD)/fonts
+	mkdir -p $(PWD)/fonts/fa
 	cp -vR node_modules/npm-font-open-sans/fonts/* $(PWD)/fonts/
+	cp -vR node_modules/@fortawesome/fontawesome-free-webfonts/webfonts/* $(PWD)/fonts/fa/
 
-build: clean install include-yarn-deps
+build: clean install
 	$(JEKYLL) build --config _config.yml,_config_prod.yml
 
-serve: install include-yarn-deps
+serve: install
 	$(JEKYLL) serve
 
 test: build
